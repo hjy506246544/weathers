@@ -1,10 +1,8 @@
 package com.gvs.activity;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
-
 import net.simonvt.menudrawer.MenuDrawer;
 import android.app.Dialog;
 import android.content.Intent;
@@ -27,7 +25,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.viewpagerindicator.CirclePageIndicator;
 import com.gvs.adapter.SideMenuAdapter;
 import com.gvs.adapter.WeatherPagerAdapter;
@@ -44,23 +41,19 @@ import com.way.weather.plugin.bean.WeatherInfo;
 import com.way.weather.plugin.spider.WeatherSpider;
 import com.gvs.activity.R;
 
-public class MainActivity extends BaseActivity implements OnClickListener,
-		OnPageChangeListener {
+public class MainActivity extends BaseActivity implements OnClickListener,OnPageChangeListener {
 	private static final String INSTANCESTATE_TAB = "tab_index";
 	private String mShareNormalStr = "#天气#提醒您:今天%s,%s,%s,%s,";// 日期、城市、天气、温度
 	private String mAqiShareStr = "空气质量指数(AQI):%s μg/m³,等级[%s];PM2.5浓度值:%s μg/m³。%s ";// aqi、等级、pm2.5、建议
-	private String mShareEndStr = "（请关注博客：http://blog.csdn.net/way_ping_li）";
 	private MenuDrawer mMenuDrawer;
 	private View mSplashView;
 	private static final int SHOW_TIME_MIN = 3000;// 最小显示时间
 	private long mStartTime;// 开始时间
 	private Handler mHandler;
 	private SideMenuAdapter mMenuAdapter;
-	private int mPagerOffsetPixels;
-	private int mPagerPosition;
+	private int mPagerOffsetPixels,mPagerPosition;
 	private TextView mTitleTextView;
-	private ImageView mShareBtn;
-	private ImageView mLocationIV;
+	private ImageView mShareBtn,mLocationIV;
 
 	private ListView mMenuListView;
 	private View mRootView;
@@ -86,7 +79,6 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	private void initDatas() {
 		mStartTime = System.currentTimeMillis();// 记录开始时间，
 		mHandler = new Handler();
-		// mTmpCities = getTmpCities();
 		// 第一次进来无定位城市
 		if (TextUtils.isEmpty(PreferenceUtils.getPrefString(this,
 				AUTO_LOCATION_CITY_KEY, ""))) {
@@ -103,7 +95,6 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 		mMainViewPager = (ViewPager) findViewById(R.id.main_viewpager);
 		// 设置viewpager缓存view的个数，默认为1个，理论上是越多越好，但是比较耗内存，
 		// 我这里设置两个，性能上有点改善
-		// mMainViewPager.setOffscreenPageLimit(2);
 		mFragmentAdapter = new WeatherPagerAdapter(this);
 		mMainViewPager.setAdapter(mFragmentAdapter);
 		mCirclePageIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
@@ -345,8 +336,6 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 		mMenuDrawer.setMenuSize(Math.round(0f * SystemUtils
 				.getDisplayWidth(this)));
 		// View之后的侧边栏菜单
-		// mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.Type.BEHIND,
-		// Position.LEFT, MenuDrawer.MENU_DRAG_CONTENT);
 		mMenuListView = (ListView) LayoutInflater.from(this).inflate(
 				R.layout.sidemenu_listview, null);
 
@@ -384,7 +373,6 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 
 	protected void onMenuItemClicked(int position, Item item) {
 		mMenuDrawer.toggleMenu(true);// 关闭此窗口
-		// Toast.makeText(this, item.mTitleStr, Toast.LENGTH_SHORT).show();
 		switch (item.mId) {
 		case Item.INFINITE_ID:
 			startActivity(new Intent(MainActivity.this,
@@ -414,7 +402,6 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 
 		@Override
 		public void detecting() {
-			// do nothing
 		}
 
 		@Override
@@ -440,6 +427,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 		}
 
 	};
+
 	// 进入下一个Activity
 	Runnable splashGone = new Runnable() {
 
