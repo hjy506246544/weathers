@@ -217,10 +217,10 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.sidebarButton:
-			mMenuDrawer.toggleMenu(true);
+			//mMenuDrawer.toggleMenu(true);
 			break;
 		case R.id.shareButton:
-			shareTo();
+			//shareTo();
 			break;
 		case R.id.location_city_textview:
 			startActivity(new Intent(MainActivity.this,
@@ -342,7 +342,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	private void initMenuDrawer() {
 		// 覆盖在View之前的侧边栏菜单
 		mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.Type.OVERLAY);
-		mMenuDrawer.setMenuSize(Math.round(0.7f * SystemUtils
+		mMenuDrawer.setMenuSize(Math.round(0f * SystemUtils
 				.getDisplayWidth(this)));
 		// View之后的侧边栏菜单
 		// mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.Type.BEHIND,
