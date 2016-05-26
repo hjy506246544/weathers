@@ -1,5 +1,4 @@
 package com.gvs.fragment;
-
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.ContentResolver;
@@ -8,7 +7,6 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +29,6 @@ import com.gvs.adapter.WeatherListAdapter;
 import com.gvs.beans.City;
 import com.gvs.db.CityProvider;
 import com.gvs.db.CityProvider.CityConstants;
-import com.gvs.util.L;
 import com.gvs.util.SystemUtils;
 import com.gvs.util.TimeUtils;
 import com.gvs.util.WeatherIconUtils;
@@ -44,8 +41,7 @@ import com.way.weather.plugin.spider.WeatherSpider;
 import com.gvs.activity.R;
 
 @SuppressLint({ "NewApi", "ValidFragment" })
-public class WeatherFragment extends Fragment implements OnRefreshListener,
-		OnPullEventListener {
+public class WeatherFragment extends Fragment implements OnRefreshListener,OnPullEventListener {
 	public static final String ARG_CITY = "city";
 	public static final String ARG_WEATHERINFO = "weatherInfo";
 	public static final String REFRESH_TIME_KEY = "refreshTime";
@@ -92,14 +88,7 @@ public class WeatherFragment extends Fragment implements OnRefreshListener,
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// if(mView != null){
-		// if(mView.getParent() != null){
-		// ((ViewGroup)mView.getParent()).removeView(mView);
-		// }
-		// return mView;
-		// }
 		mView = inflater.inflate(R.layout.weather_fragment, container, false);
-		// L.i("liweiping","Fragment onCreateView");
 		return mView;
 	}
 
@@ -134,8 +123,7 @@ public class WeatherFragment extends Fragment implements OnRefreshListener,
 		int displayHeight = SystemUtils.getDisplayHeight(getActivity());
 		// HeaderView高度=屏幕高度-标题栏高度-状态栏高度
 		mHeaderHeight = displayHeight
-				- getResources().getDimensionPixelSize(
-						R.dimen.abs__action_bar_default_height)
+				- getResources().getDimensionPixelSize(R.dimen.abs__action_bar_default_height)
 				- SystemUtils.getStatusBarHeight(getActivity());
 		mListHeaderView.setLayoutParams(new LayoutParams(
 				LayoutParams.MATCH_PARENT, mHeaderHeight));
@@ -155,19 +143,6 @@ public class WeatherFragment extends Fragment implements OnRefreshListener,
 		mListView.setOnScrollListener(mOnScrollListener);// 监听滑动
 		initCurWeatherViews(view);
 		mListView.setSelection(0);// 默认选中最上面一个view
-
-		// 本来是想点击headerview可以滑动到下一个view，但是效果不好，就干脆不要了
-		// mListHeaderView.setOnClickListener(new OnClickListener() {
-		//
-		// @Override
-		// public void onClick(View v) {
-		// Log.i("liweiping", "mListHeaderView onClick......");
-		// mListView.setSelection(1);
-		// // mListView.scrollListBy(mHeaderHeight);
-		// // mListView.setSelectionFromTop(1, mHeaderHeight);
-		// // mListView.setSelectionAfterHeaderView();
-		// }
-		// });
 	}
 
 	/**
@@ -202,12 +177,8 @@ public class WeatherFragment extends Fragment implements OnRefreshListener,
 				onNewScroll(0);
 			} else if (topChild != mListHeaderView) {
 				onNewScroll(mListHeaderView.getHeight());
-				// L.i("liweiping",
-				// "topChild != mHeaderView =" + mHeaderView.getHeight());
 			} else {
 				onNewScroll(-topChild.getTop());
-				// L.i("liweiping",
-				// "-topChild.getTop() = " + (-topChild.getTop()));
 			}
 		}
 
@@ -240,9 +211,6 @@ public class WeatherFragment extends Fragment implements OnRefreshListener,
 		// 控制模糊背景的alpha值
 		float ratio = Math.min(1.5f * (-mListHeaderView.getTop())
 				/ mHeaderHeight, 1.0f);
-		// L.i("liweiping", "-mHeaderView.getTop() = " +
-		// (-mHeaderView.getTop())
-		// + ",  mHeaderHeight = " + mHeaderHeight + ", ratio = " + ratio);
 		int newAlpha = Math.round(ratio * 255);
 		// Apply on the ImageView if needed
 		mBlurredImageView.setImageAlpha(newAlpha);
@@ -252,7 +220,6 @@ public class WeatherFragment extends Fragment implements OnRefreshListener,
 		int offset = mLastDampedScroll - dampedScroll;
 		mBlurredImageView.offsetTopAndBottom(offset);
 		mNormalImageView.offsetTopAndBottom(offset);
-		// L.i("liweiping", "offset = " + offset);
 		mLastDampedScroll = dampedScroll;
 	}
 

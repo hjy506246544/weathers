@@ -23,20 +23,12 @@ public class CountDownView extends FrameLayout {
 	private int mRemainingSecs = 0;
 	private OnCountDownFinishedListener mListener;
 	private Animation mCountDownAnim;
-//	private SoundPool mSoundPool;
-//	private int mBeepTwice;
-//	private int mBeepOnce;
-//	private boolean mPlaySound;
 	private final Handler mHandler = new MainHandler();
 
 	public CountDownView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		mCountDownAnim = AnimationUtils.loadAnimation(context,
 				R.anim.count_down_exit);
-		// Load the beeps
-//		mSoundPool = new SoundPool(1, AudioManager.STREAM_NOTIFICATION, 0);
-//		mBeepOnce = mSoundPool.load(context, R.raw.beep_once, 1);
-//		mBeepTwice = mSoundPool.load(context, R.raw.beep_twice, 1);
 	}
 
 	public boolean isCountingDown() {
@@ -62,15 +54,6 @@ public class CountDownView extends FrameLayout {
 			mCountDownAnim.reset();
 			mRemainingSecondsView.clearAnimation();
 			mRemainingSecondsView.startAnimation(mCountDownAnim);
-
-			// Play sound effect for the last 3 seconds of the countdown
-//			if (mPlaySound) {
-//				if (newVal == 1) {
-//					mSoundPool.play(mBeepTwice, 1.0f, 1.0f, 0, 0, 1.0f);
-//				} else if (newVal <= 3) {
-//					mSoundPool.play(mBeepOnce, 1.0f, 1.0f, 0, 0, 1.0f);
-//				}
-//			}
 			// Schedule the next remainingSecondsChanged() call in 1 second
 			mHandler.sendEmptyMessageDelayed(SET_TIMER_TEXT, 1000);
 		}
@@ -93,7 +76,6 @@ public class CountDownView extends FrameLayout {
 			return;
 		}
 		setVisibility(View.VISIBLE);
-//		mPlaySound = playSound;
 		remainingSecondsChanged(sec);
 	}
 	public void startCountDown(int sec) {

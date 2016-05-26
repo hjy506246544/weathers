@@ -247,7 +247,6 @@ public class WeatherIconUtils {
 	public static boolean isNight(long time) {
 		SimpleDateFormat df = new SimpleDateFormat("HH");
 		String timeStr = df.format(new Date(System.currentTimeMillis()));
-		// L.i("liweiping", "timeStr = " + timeStr);
 		try {
 			int timeHour = Integer.parseInt(timeStr);
 			return (timeHour >= 18 || timeHour <= 6);

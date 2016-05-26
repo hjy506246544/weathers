@@ -26,7 +26,7 @@ public class SystemUtils {
 
 	/**
 	 * 获取临时城市数组
-	 * 
+	 *
 	 * @param c
 	 * @return
 	 */
@@ -53,7 +53,7 @@ public class SystemUtils {
 
 	/**
 	 * 获取热门城市数组
-	 * 
+	 *
 	 * @param c
 	 * @return
 	 */
@@ -76,7 +76,7 @@ public class SystemUtils {
 
 	/**
 	 * 获取所有城市数组
-	 * 
+	 *
 	 * @param c
 	 * @return
 	 */
@@ -133,10 +133,6 @@ public class SystemUtils {
 			byte[] buffer = new byte[is.available()];// 本地文件读写可用此方法
 			is.read(buffer);
 			fos.write(buffer);
-			// int len = -1;
-			// byte[] buffer = new byte[1024 * 8];
-			// while ((len = is.read(buffer)) != -1) {
-			// fos.write(buffer, 0, len);
 			fos.close();
 			is.close();
 			L.i("liweiping", "copyDB finish....");
@@ -149,7 +145,7 @@ public class SystemUtils {
 
 	/**
 	 * 获取一个自定义风格的Dialog
-	 * 
+	 *
 	 * @param activity
 	 *            上下文对象
 	 * @param style
@@ -192,7 +188,7 @@ public class SystemUtils {
 
 	/**
 	 * 获取手机屏幕高度
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -207,7 +203,7 @@ public class SystemUtils {
 
 	/**
 	 * 获取手机屏幕宽度
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -222,7 +218,7 @@ public class SystemUtils {
 
 	/**
 	 * 反射方法获取状态栏高度
-	 * 
+	 *
 	 * @return
 	 */
 	public static int getStatusBarHeight(Context context) {
@@ -237,8 +233,6 @@ public class SystemUtils {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// Toast.makeText(getActivity(), "StatusBarHeight = " + statusBarHeight,
-		// Toast.LENGTH_SHORT).show();
 		return statusBarHeight;
 	}
 }

@@ -57,8 +57,6 @@ public class CityProvider extends ContentProvider {
 
 	private SQLiteDatabase mSqLiteDatabase;
 
-	// private CityProvider() {
-	// }
 	public static void createTmpCityTable(Context context) {
 		SQLiteDatabase db = context.openOrCreateDatabase(
 				SystemUtils.getDBFilePath(context), Context.MODE_PRIVATE, null);
@@ -157,12 +155,6 @@ public class CityProvider extends ContentProvider {
 
 		ContentValues values = (initialValues != null) ? new ContentValues(
 				initialValues) : new ContentValues();
-
-		// for (String colName : CityConstants.getRequiredColumns()) {
-		// if (values.containsKey(colName) == false) {
-		// throw new IllegalArgumentException("Missing column: " + colName);
-		// }
-		// }
 
 		long rowId = mSqLiteDatabase.insert(TMPCITY_TABLE_NAME,
 				CityConstants.REFRESH_TIME, values);
@@ -264,16 +256,7 @@ public class CityProvider extends ContentProvider {
 
 		public static ArrayList<String> getRequiredColumns() {
 			ArrayList<String> tmpList = new ArrayList<String>();
-			// tmpList.add(PROVINCE);
-			// tmpList.add(CITY);
 			tmpList.add(NAME);
-			// tmpList.add(PINYIN);
-
-			// tmpList.add(PY);
-			// tmpList.add(PHONE_CODE);
-			// tmpList.add(AREA_CODE);
-			// tmpList.add(LONGITUDE);
-			// tmpList.add(LATITUDE);
 			tmpList.add(POST_ID);
 			tmpList.add(REFRESH_TIME);
 			return tmpList;
