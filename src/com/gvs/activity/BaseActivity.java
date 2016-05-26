@@ -1,23 +1,20 @@
 package com.gvs.activity;
-
 import java.util.List;
-
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import com.gvs.beans.City;
 import com.gvs.db.CityProvider;
 import com.gvs.db.CityProvider.CityConstants;
-import com.way.ui.swipeback.SwipeBackActivity;
 import com.gvs.util.LocationUtils;
 import com.gvs.util.NetUtil;
 import com.gvs.util.SystemUtils;
 import com.gvs.util.LocationUtils.CityNameStatus;
 import com.gvs.activity.R;
+import com.way.ui.swipeback.SwipeBackActivity;
 
 public class BaseActivity extends SwipeBackActivity {
 	public static final String AUTO_LOCATION_CITY_KEY = "auto_location";

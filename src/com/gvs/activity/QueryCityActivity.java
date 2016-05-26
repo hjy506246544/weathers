@@ -1,7 +1,5 @@
 package com.gvs.activity;
-
 import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -26,21 +24,18 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.gvs.adapter.QueryCityAdapter;
 import com.gvs.beans.City;
 import com.gvs.db.CityProvider;
 import com.gvs.db.CityProvider.CityConstants;
 import com.gvs.util.L;
 import com.gvs.util.LocationUtils;
-import com.gvs.util.NetUtil;
 import com.gvs.util.PreferenceUtils;
 import com.gvs.util.SystemUtils;
 import com.gvs.util.T;
 import com.gvs.util.LocationUtils.CityNameStatus;
 import com.gvs.widget.CountDownView;
 import com.gvs.widget.CountDownView.OnCountDownFinishedListener;
-import com.gvs.activity.R;
 
 public class QueryCityActivity extends BaseActivity implements OnClickListener,
 		TextWatcher, OnItemClickListener {

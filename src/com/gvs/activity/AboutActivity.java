@@ -1,13 +1,12 @@
 package com.gvs.activity;
 
+import com.way.ui.swipeback.SwipeBackActivity;
+
 import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-
-import com.way.ui.swipeback.SwipeBackActivity;
-import com.gvs.activity.R;
 
 public class AboutActivity extends SwipeBackActivity {
 
