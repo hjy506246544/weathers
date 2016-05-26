@@ -35,12 +35,8 @@ public class SideMenuAdapter extends BaseAdapter {
 		for (int i = 0; i < tmpCities.size(); i++)
 			mItems.add(new Item(i, tmpCities.get(i).getName(), R.drawable.loc));
 		mItems.add(new Category("工具"));
-		// mItems.add(new Item(Item.SETTING_ID, "设置",
-		// R.drawable.sidebar_icon_settings_dark));
 		mItems.add(new Item(Item.FEEDBACK_ID, "意见与建议",
 				R.drawable.sidebar_icon_send_feedback_dark));
-		// mItems.add(new Item(Item.SHARE_ID, "分享",
-		// R.drawable.sidebar_icon_share_dark));
 		mItems.add(new Item(Item.ABOUT_ID, "关于",
 				R.drawable.sidebar_icon_rate_dark));
 		notifyDataSetChanged();

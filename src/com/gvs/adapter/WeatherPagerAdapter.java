@@ -48,7 +48,6 @@ public class WeatherPagerAdapter extends FragmentStatePagerAdapter {
 
 	public void clearItems() {
 		mItemInfos.clear();
-		// notifyDataSetChanged();
 	}
 
 	@Override

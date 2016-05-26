@@ -40,9 +40,9 @@ public class FeedBackActivity extends SwipeBackActivity {
 				if (!TextUtils.isEmpty(content)) {
 					Intent intent = new Intent(Intent.ACTION_SENDTO);
 					intent.setType("text/plain");
-					intent.putExtra(Intent.EXTRA_SUBJECT, "威震天气 - 信息反馈");
+					intent.putExtra(Intent.EXTRA_SUBJECT, "天气 - 信息反馈");
 					intent.putExtra(Intent.EXTRA_TEXT, content);
-					intent.setData(Uri.parse("mailto:way.ping.li@gmail.com"));
+					//intent.setData(Uri.parse("mailto:way.ping.li@gmail.com"));
 					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					FeedBackActivity.this.startActivity(intent);
 				} else {

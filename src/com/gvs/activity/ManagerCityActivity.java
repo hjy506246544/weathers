@@ -129,8 +129,6 @@ public class ManagerCityActivity extends BaseActivity implements
 				: View.INVISIBLE);
 		mRefreshCityBtn
 				.setVisibility(isRefresh ? View.INVISIBLE : View.VISIBLE);
-		// mEditCityBtn.setVisibility(isRefresh ? View.INVISIBLE :
-		// View.VISIBLE);
 		mEditCityBtn.setEnabled(!isRefresh && (mTmpCitys.size() > 1));
 		mGridView.setEnabled(!isRefresh);
 		mGridView.setOnReorderingListener(isRefresh ? null : dragSortListener);
@@ -169,16 +167,6 @@ public class ManagerCityActivity extends BaseActivity implements
 				mContentResolver.insert(CityProvider.TMPCITY_CONTENT_URI,
 						contentValues);
 			}
-
-			// 主键不允许修改，暂时保留。
-			// String fromPostID = mAdapter.getItem(fromPosition).getPostID();
-			// ContentValues idContentValues = new ContentValues();
-			// idContentValues.put(CityConstants.ID, toPosition);
-			// int result =
-			// mContentResolver.update(CityProvider.TMPCITY_CONTENT_URI,
-			// idContentValues, CityConstants.POST_ID + "=?",
-			// new String[] { fromPostID });//更新位置
-			// L.i("liweiping", "result = " + result);
 		}
 
 		@Override
@@ -337,7 +325,6 @@ public class ManagerCityActivity extends BaseActivity implements
 
 		@Override
 		public int getItemViewType(int position) {
-			// return super.getItemViewType(position);
 			if (getItem(position) == null)
 				return ADD_CITY_TYPE;
 			return NORMAL_CITY_TYPE;
@@ -374,8 +361,6 @@ public class ManagerCityActivity extends BaseActivity implements
 			} else {
 				viewHolder = (ViewHolder) convertView
 						.getTag(R.drawable.ic_launcher + type);
-				// L.i("liweiping", "getView from cache viewHolder = "
-				// + viewHolder.toString());
 			}
 			bindViewData(viewHolder, position);
 			return convertView;

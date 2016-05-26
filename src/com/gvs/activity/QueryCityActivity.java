@@ -53,7 +53,6 @@ public class QueryCityActivity extends BaseActivity implements OnClickListener,
 	private EditText mQueryCityET;
 	private ImageButton mQueryCityExitBtn;
 	private ListView mQueryCityListView;
-	// private TextView mEmptyCityView;
 	private GridView mHotCityGridView;
 	private LocationUtils mLocationUtils;
 	private List<City> mTmpCitys;
@@ -93,8 +92,6 @@ public class QueryCityActivity extends BaseActivity implements OnClickListener,
 		mQueryCityListView.setTextFilterEnabled(true);
 		mFilter = mSearchCityAdapter.getFilter();
 
-		// mEmptyCityView = (TextView) findViewById(R.id.noCityText);
-
 		mHotCityGridView = (GridView) findViewById(R.id.hotCityGrid);
 		mHotCityGridView.setOnItemClickListener(this);
 		mHotCityGridView.setAdapter(new HotCityAdapter());
@@ -133,16 +130,6 @@ public class QueryCityActivity extends BaseActivity implements OnClickListener,
 		case R.id.cityList:
 			City city = mSearchCityAdapter.getItem(position);
 			boolean isExists = false;
-			// for (City c : mTmpCitys)
-			// if (TextUtils.equals(city.getPostID(), c.getPostID())) {
-			// isExists = true;
-			// break;
-			// }
-			// if (isExists) {
-			// Toast.makeText(this, R.string.city_exists,
-			// Toast.LENGTH_SHORT).show();
-			// return;// 已经存在此城市，直接返回
-			// }
 			L.i("liweiping", city.getName());
 			addToTmpCityTable(city);
 			break;
@@ -191,7 +178,6 @@ public class QueryCityActivity extends BaseActivity implements OnClickListener,
 		Intent i = new Intent();
 		i.putExtra(CITY_EXTRA_KEY, city);
 		setResult(RESULT_OK, i);
-		// setResult(RESULT_OK);
 		finish();
 	}
 
@@ -221,7 +207,6 @@ public class QueryCityActivity extends BaseActivity implements OnClickListener,
 		super.onStop();
 		stopLocation();
 	}
-
 
 	@Override
 	protected void stopLocation() {
@@ -386,10 +371,8 @@ public class QueryCityActivity extends BaseActivity implements OnClickListener,
 			} else {
 				viewHoler.selectedIV.setVisibility(View.GONE);
 			}
-
 			return convertView;
 		}
-
 	}
 
 	static class ViewHoler {

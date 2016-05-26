@@ -134,8 +134,8 @@ public class WeatherListAdapter extends BaseAdapter {
 		holder.forecastViewDay3 = convertView.findViewById(R.id.day3);
 		holder.forecastViewDay4 = convertView.findViewById(R.id.day4);
 		holder.forecastViewDay5 = convertView.findViewById(R.id.day5);
-		holder.forecastFootView = (TextView) convertView
-				.findViewById(R.id.forecast_foot);
+//		holder.forecastFootView = (TextView) convertView
+//				.findViewById(R.id.forecast_foot);
 		// 详细信息
 		holder.detailsWeatherIV = (ImageView) convertView
 				.findViewById(R.id.details_icon);
@@ -267,7 +267,7 @@ public class WeatherListAdapter extends BaseAdapter {
 		lowTempDay4.setText(mForecast.getTmpLow(4) + "°");
 		lowTempDay5.setText(mForecast.getTmpLow(5) + "°");
 
-		holder.forecastFootView.setText("");
+		//holder.forecastFootView.setText("");
 	}
 
 	private void bindDetailsView(ViewHolder holder, int position) {
@@ -286,8 +286,6 @@ public class WeatherListAdapter extends BaseAdapter {
 		} else {
 			holder.windTV.setText(mRealTime.getWind());
 		}
-		// holder.detailsFootTV.setText("中国天气网");
-		// holder.detailsFootTV.setText(mLunarCalendar.getLunarDayInfo());
 		String str[] = mLunarCalendar.getLunarCalendarInfo(false);
 		holder.detailsFootTV.setText(mLunarCalendar
 				.getLunarYear(mLunarCalendar.lunarYear)
@@ -447,37 +445,20 @@ public class WeatherListAdapter extends BaseAdapter {
 
 	private static final class ViewHolder {
 		// 预报
-		View forecastViewDay1;
-		View forecastViewDay2;
-		View forecastViewDay3;
-		View forecastViewDay4;
-		View forecastViewDay5;
-		TextView forecastFootView;
+		View forecastViewDay1,forecastViewDay2,forecastViewDay3,forecastViewDay4,forecastViewDay5;
+		//TextView forecastFootView;
 		// 详细信息
 		ImageView detailsWeatherIV;
-		TextView weatherNameTV;
-		TextView feelsTempTV;
-		TextView humidityTV;
-		TextView windTV;
-		TextView windDescTV;
-		TextView detailsFootTV;
+		TextView weatherNameTV,feelsTempTV,humidityTV,windTV,windDescTV,detailsFootTV;
 		// 空气质量
 		ImageView aqiIV;
-		TextView aqiLevelTV;
-		TextView aqiTV;
-		TextView pm25TV;
-		TextView aqiDescTV;
-		TextView aqiFootTV;
+		TextView aqiLevelTV,aqiTV,pm25TV,aqiDescTV,aqiFootTV;
 		// 指数
 		View windIndexView;
 		View uaIndexView;// 紫外线指数
-		View clotheIndexView;
-		View comfortIndexView;
-		View carIndexView;
+		View clotheIndexView,comfortIndexView,carIndexView;
 		View insolationIndexView;// 晾晒
-		View sportIndexView;
-		View travelIndexDivider;
-		View travelIndexView;
+		View sportIndexView,travelIndexDivider,travelIndexView;
 	}
 
 }
