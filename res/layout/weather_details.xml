@@ -6,7 +6,8 @@
     <com.gvs.widget.WeatherTypefacedTextView
         android:id="@+id/details_label"
         style="@style/Label"
-        android:layout_marginTop="@dimen/negative_margin_md"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
         android:text="详细信息"
         weather:typeface="fonts/Roboto-Light.ttf" />
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">威震天气</string>
+    <string name="app_name">天气</string>
     <string name="press_again_exit">再按一次退出</string>
     <string name="speak_launch_project_weather">Launch Project Weather web site</string>
     <string name="pull_to_refresh_pull_sub_label">上次刷新:%s</string>
@@ -21,8 +21,8 @@
     <string name="date_format">M月d日 HH:mm</string>
     <string name="year_format">yyyy年 M月d日 HH:mm</string>
     <string name="app_error">威震天中弹了</string>
-    <string name="app_error_title">威震天-遗体邮寄</string>
-    <string name="app_error_message">亲!5555...非常艰难的告诉您:威震天牺牲了,请您将它的遗体邮寄给我呗,我会尽快让它满血复活的,谢谢哦,么么哒!</string>
+    <string name="app_error_title">天气-遗体邮寄</string>
+    <string name="app_error_message">亲!5555...非常艰难的告诉您:天气牺牲了,请您将它的遗体邮寄给我呗,我会尽快让它满血复活的,谢谢哦,么么哒!</string>
     <string name="app_error_toast">亲，请保留以下尸体的完整性哦！么么哒！\n</string>
     <string name="choose_email_client">选一个给力的邮件客户端吧！</string>
     <string name="submit_report">愉快的发送</string>
@@ -41,11 +41,10 @@
     <string name="share_to">亲，您想分享到？</string>
     <string name="app_version">V1.0.0</string>
     <string name="app_information">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;\
-        亲！么么！本应用是以变形金刚作为主题元素的一款轻型实用天气软件哦!如果您想了解更多,\
-        欢迎访问我的博客主页:http://blog.csdn.net/way_ping_li,\
+        亲！么么！本应用是一款轻型实用天气软件哦!如果您想了解更多,\
         由于时间仓促，错误与疏忽之处在所难免,\
         如果各位亲能给出宝贵的建议与指点,那将是极好的哦！么么哒！</string>
-    <string name="all_rights_reserved">Copyright © 2012-2014 way. All Rights Reserved.</string>
+    <string name="all_rights_reserved">广州视声智能科技有限公司.</string>
     <string name="get_weatherinfo_scuessed">亲，恭喜您，刷新成功</string>
     <string name="service_have_not_bind">亲！服务还未绑定成功，请稍后哦！</string>
     <!-- lunar -->

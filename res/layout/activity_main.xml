@@ -22,13 +22,4 @@
     <include
         android:id="@+id/splash_view"
         layout="@layout/splash" />
-	<!--
-    <ImageView
-        android:id="@+id/gradient_top"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/bg_shade" />
- -->
 </FrameLayout>
